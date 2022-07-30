@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import time
 import frida
 import logging
@@ -11,7 +9,7 @@ logging.basicConfig(
     level=logging.DEBUG,
 )
 
-device = frida.get_usb_device()
+device = frida.get_usb_device(1)
 scanner = Scan(device.name)
 logging.info(f'Connected to {device.name}')
 logging.info('scanning all processes for the following libraries')
